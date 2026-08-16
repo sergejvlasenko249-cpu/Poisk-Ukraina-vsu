@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Поиск Украина ВСУ — информационный сайт для поиска военнослужащих, пропавших без вести.">
+  <title>Поиск Украина ВСУ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#" aria-label="Поиск Украина ВСУ">
+      <span class="brand-mark">🔎</span>
+      <span>Поиск Украина ВСУ</span>
+    </a>
+    <nav>
+      <a href="#search">Поиск</a>
+      <a href="#info">Информация</a>
+      <a class="nav-telegram" href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Глубокий поиск</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Открытый информационный поиск</span>
+        <h1>Помощь в поиске пропавших без вести военнослужащих ВСУ</h1>
+        <p>Используйте обычный поиск на сайте, чтобы проверить доступную информацию. Если необходим более детальный поиск — обратитесь через Telegram.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#search">Начать поиск</a>
+          <a class="button secondary" href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Глубокий поиск → Telegram</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🔍</div>
+        <h2>Обычный поиск</h2>
+        <p>Доступен каждому посетителю сайта без регистрации.</p>
+        <a href="#search">Перейти к поиску →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="search" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Поиск</span>
+        <h2>Найти военнослужащего</h2>
+        <p>Введите ФИО, населённый пункт или другую известную информацию.</p>
+      </div>
+
+      <div class="search-box">
+        <label for="searchInput">Поисковый запрос</label>
+        <div class="search-row">
+          <input id="searchInput" type="search" placeholder="Например: фамилия, имя или населённый пункт" autocomplete="off">
+          <button id="searchButton" class="button primary" type="button">Искать</button>
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">Все</button>
+          <button class="filter" data-filter="missing">Пропавшие без вести</button>
+          <button class="filter" data-filter="found">Информация обновлена</button>
+        </div>
+      </div>
+
+      <div id="results" class="results" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="info" class="section section-muted">
+    <div class="container info-grid">
+      <div>
+        <span class="eyebrow">Важно</span>
+        <h2>Информация для родственников</h2>
+        <p>Сайт предназначен для поиска и систематизации открытой информации. Наличие записи на сайте само по себе не подтверждает официальный статус человека.</p>
+      </div>
+      <div class="info-list">
+        <div><strong>Проверяйте источники</strong><span>Отделяйте подтверждённые сведения от сообщений пользователей.</span></div>
+        <div><strong>Берегите персональные данные</strong><span>Не публикуйте пароли, банковские данные и другую лишнюю конфиденциальную информацию.</span></div>
+        <div><strong>Нужен детальный поиск?</strong><span>Нажмите «Глубокий поиск» и перейдите в Telegram.</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Поиск Украина ВСУ</span>
+    <a href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Глубокий поиск — Telegram</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
