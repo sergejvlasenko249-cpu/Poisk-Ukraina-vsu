@@ -1,23 +1,23 @@
 <!doctype html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Поиск Украина ВСУ — помощь в поиске военнослужащих, пропавших без вести.">
-  <title>Поиск Украина ВСУ</title>
+  <meta name="description" content="Пошук Україна ЗСУ — інформаційний сайт для пошуку військовослужбовців, зниклих безвісти.">
+  <title>Пошук Україна ЗСУ</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#" aria-label="Поиск Украина ВСУ">
+    <a class="brand" href="#" aria-label="Пошук Україна ЗСУ">
       <span class="brand-mark">🔎</span>
-      <span>Поиск Украина ВСУ</span>
+      <span>Пошук Україна ЗСУ</span>
     </a>
     <nav>
-      <a href="#search">Проверить базу</a>
-      <a href="#request">Оставить запрос</a>
-      <a href="#info">Информация</a>
+      <a href="#search">Пошук</a>
+      <a href="#request">Залишити запит</a>
+      <a href="#info">Інформація</a>
       <a class="nav-telegram" href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Telegram</a>
     </nav>
   </div>
@@ -27,19 +27,19 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">Информационная помощь</span>
-        <h1>Помощь в поиске пропавших без вести военнослужащих ВСУ</h1>
-        <p>На сайте можно проверить открытую базу данных. Если информации нет — оставьте запрос, и мы свяжемся с вами через Telegram.</p>
+        <span class="eyebrow">Інформаційна допомога</span>
+        <h1>Допомога у пошуку зниклих безвісти військовослужбовців ЗСУ</h1>
+        <p>Використовуйте пошук на сайті, щоб перевірити наявність відкритих даних. Якщо інформації немає — залиште запит, і ми зв'яжемося з вами через Telegram.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#search">Проверить базу</a>
-          <a class="button secondary" href="#request">Оставить запрос</a>
+          <a class="button primary" href="#search">Почати пошук</a>
+          <a class="button secondary" href="#request">Залишити запит</a>
         </div>
       </div>
       <div class="hero-card">
         <div class="hero-card-icon">📋</div>
-        <h2>Как это работает</h2>
-        <p>1. Проверьте базу на сайте<br>2. Если нет данных — заполните форму<br>3. Получите ответ в Telegram</p>
-        <a href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Написать в Telegram →</a>
+        <h2>Як це працює</h2>
+        <p>1. Перевірте базу на сайті<br>2. Якщо даних немає — заповніть форму<br>3. Отримайте відповідь у Telegram</p>
+        <a href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Написати в Telegram →</a>
       </div>
     </div>
   </section>
@@ -47,28 +47,28 @@
   <section id="search" class="section">
     <div class="container">
       <div class="section-heading">
-        <span class="eyebrow">Проверка</span>
-        <h2>Проверить открытую базу</h2>
-        <p>Введите ФИО, населённый пункт или подразделение. База обновляется по мере поступления данных.</p>
+        <span class="eyebrow">Перевірка</span>
+        <h2>Знайти військовослужбовця</h2>
+        <p>Введіть ПІБ, населений пункт або підрозділ. База оновлюється за міру надходження даних.</p>
       </div>
 
       <div class="search-box">
-        <label for="searchInput">Поисковый запрос</label>
+        <label for="searchInput">Пошуковий запит</label>
         <div class="search-row">
-          <input id="searchInput" type="search" placeholder="Например: фамилия, имя или населённый пункт" autocomplete="off">
-          <button id="searchButton" class="button primary" type="button">Искать</button>
+          <input id="searchInput" type="search" placeholder="Наприклад: прізвище, ім'я або населений пункт" autocomplete="off">
+          <button id="searchButton" class="button primary" type="button">Шукати</button>
         </div>
         <div class="filters">
-          <button class="filter active" data-filter="all">Все</button>
-          <button class="filter" data-filter="missing">Пропавшие без вести</button>
-          <button class="filter" data-filter="found">Информация обновлена</button>
+          <button class="filter active" data-filter="all">Усі</button>
+          <button class="filter" data-filter="missing">Зниклі безвісти</button>
+          <button class="filter" data-filter="found">Інформація оновлена</button>
         </div>
       </div>
 
       <div id="results" class="results" aria-live="polite"></div>
 
       <div class="notice-box" style="margin-top:20px; padding:18px; background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; color:#92400e;">
-        <strong>⚠️ Не нашли человека?</strong> Открытая база содержит только подтверждённые данные. Если поиск не дал результатов — <a href="#request" style="color:#92400e; text-decoration:underline; font-weight:700;">оставьте запрос</a>, и мы проведём глубокий поиск.
+        <strong>⚠️ Не знайшли людину?</strong> Відкрита база містить лише підтверджені дані. Якщо пошук не дав результатів — <a href="#request" style="color:#92400e; text-decoration:underline; font-weight:700;">залиште запит</a>, і ми проведемо глибокий пошук.
       </div>
     </div>
   </section>
@@ -76,34 +76,34 @@
   <section id="request" class="section section-muted">
     <div class="container">
       <div class="section-heading">
-        <span class="eyebrow">Запрос</span>
-        <h2>Оставить запрос на поиск</h2>
-        <p>Заполните форму — мы получим ваш запрос в Telegram и свяжемся с вами.</p>
+        <span class="eyebrow">Запит</span>
+        <h2>Залишити запит на пошук</h2>
+        <p>Заповніть форму — ми отримаємо ваш запит у Telegram та зв'яжемося з вами.</p>
       </div>
 
       <form class="search-box" id="requestForm" onsubmit="return sendToTelegram(event)">
         <div class="form-group">
-          <label for="reqName">Кого ищем (ФИО)</label>
-          <input id="reqName" type="text" placeholder="Іваненко Олег Петрович" required>
+          <label for="reqName">Кого шукаємо (ПІБ)</label>
+          <input id="reqName" type="text" placeholder="Іваненко Олег Сергійович" required>
         </div>
         <div class="form-group">
-          <label for="reqCity">Населённый пункт / подразделение</label>
+          <label for="reqCity">Населений пункт / підрозділ</label>
           <input id="reqCity" type="text" placeholder="Харків, 93 ОМБр">
         </div>
         <div class="form-group">
-          <label for="reqDate">Дата последней связи (примерно)</label>
+          <label for="reqDate">Дата останнього зв'язку (приблизно)</label>
           <input id="reqDate" type="text" placeholder="15.02.2024">
         </div>
         <div class="form-group">
-          <label for="reqContact">Ваш контакт (Telegram или телефон)</label>
-          <input id="reqContact" type="text" placeholder="@username или +380..." required>
+          <label for="reqContact">Ваш контакт (Telegram або телефон)</label>
+          <input id="reqContact" type="text" placeholder="@username або +380..." required>
         </div>
         <div class="form-group">
-          <label for="reqInfo">Дополнительная информация</label>
-          <textarea id="reqInfo" rows="3" placeholder="Всё, что может помочь в поиске..."></textarea>
+          <label for="reqInfo">Додаткова інформація</label>
+          <textarea id="reqInfo" rows="3" placeholder="Усе, що може допомогти у пошуку..."></textarea>
         </div>
-        <button type="submit" class="button primary" style="width:100%; min-height:52px; font-size:16px;">📨 Отправить запрос в Telegram</button>
-        <p style="text-align:center; color:#66717c; font-size:13px; margin-top:10px;">После нажатия откроется Telegram с готовым сообщением</p>
+        <button type="submit" class="button primary" style="width:100%; min-height:52px; font-size:16px;">📨 Надіслати запит у Telegram</button>
+        <p style="text-align:center; color:#66717c; font-size:13px; margin-top:10px;">Після натискання відкриється Telegram із готовим повідомленням</p>
       </form>
     </div>
   </section>
@@ -111,14 +111,14 @@
   <section id="info" class="section">
     <div class="container info-grid">
       <div>
-        <span class="eyebrow">Важно</span>
-        <h2>Информация для родственников</h2>
-        <p>Сайт предназначен для помощи в поиске. Мы не публикуем персональные данные в открытом доступе — все запросы обрабатываются лично через Telegram.</p>
+        <span class="eyebrow">Важливо</span>
+        <h2>Інформація для родичів</h2>
+        <p>Сайт призначений для допомоги у пошуку. Ми не публікуємо персональні дані у відкритому доступі — усі запити обробляються особисто через Telegram.</p>
       </div>
       <div class="info-list">
-        <div><strong>Проверяйте источники</strong><span>Отделяйте подтверждённые сведения от непроверенных сообщений.</span></div>
-        <div><strong>Берегите данные</strong><span>Не публикуйте конфиденциальную информацию в открытых источниках.</span></div>
-        <div><strong>Нужна помощь?</strong><span>Напишите нам в Telegram — мы ответим в ближайшее время.</span></div>
+        <div><strong>Перевіряйте джерела</strong><span>Відокремлюйте підтверджені відомості від неперевірених повідомлень.</span></div>
+        <div><strong>Бережіть дані</strong><span>Не публікуйте конфіденційну інформацію у відкритих джерелах.</span></div>
+        <div><strong>Потрібна допомога?</strong><span>Напишіть нам у Telegram — ми відповімо найближчим часом.</span></div>
       </div>
     </div>
   </section>
@@ -126,8 +126,8 @@
 
 <footer>
   <div class="container footer-inner">
-    <span>© <span id="year"></span> Поиск Украина ВСУ</span>
-    <a href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Глубокий поиск — Telegram</a>
+    <span>© <span id="year"></span> Пошук Україна ЗСУ</span>
+    <a href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Глибокий пошук — Telegram</a>
   </div>
 </footer>
 

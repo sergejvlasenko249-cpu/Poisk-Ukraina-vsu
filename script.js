@@ -17,7 +17,7 @@ function render() {
     return;
   }
 
-  // Показываем загрузку
+  // Показуємо завантаження
   isSearching = true;
   button.disabled = true;
   button.textContent = "Пошук...";
@@ -28,7 +28,7 @@ function render() {
     </div>
   `;
 
-  // Имитируем задержку поиска (1.5 сек)
+  // Імітуємо затримку пошуку (6 сек)
   setTimeout(() => {
     isSearching = false;
     button.disabled = false;
@@ -45,7 +45,7 @@ function render() {
         <div class="empty search-notfound">
           <div style="font-size:42px; margin-bottom:10px;">😔</div>
           <strong>Записів не знайдено</strong>
-          <p>У відкритій базі немає даних за вашим запитом.<br>Можливо, інформація ще не додана або знаходиться в закритому доступі.</p>
+          <p>У відкритій базі немає даних за вашим запитом.<br>Можливо, інформація ще не додана або знаходиться у закритому доступі.</p>
           <a href="#request" class="button primary" style="margin-top:12px;">Залишити запит на пошук →</a>
         </div>
       `;
@@ -81,7 +81,7 @@ function sendToTelegram(e) {
   const info = document.getElementById("reqInfo").value.trim();
 
   if (!name || !contact) {
-    alert("Будь ласка, заповніть обов'язкові поля: ФІО та контакт");
+    alert("Будь ласка, заповніть обов'язкові поля: ПІБ та контакт");
     return false;
   }
 
