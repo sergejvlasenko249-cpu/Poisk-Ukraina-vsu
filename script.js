@@ -1,6 +1,6 @@
 const records = [
-  {name:"Пример записи", city:"Демо-запись", date:"—", unit:"—", status:"missing", statusText:"Пример"},
-  {name:"Тестовая запись", city:"Демонстрация", date:"—", unit:"—", status:"found", statusText:"Информация обновлена"}
+  {name:"Приклад: Іваненко О.С.", city:"Київ", date:"—", unit:"—", status:"missing", statusText:"Приклад запису"},
+  {name:"Приклад: Петренко М.В.", city:"Харків", date:"—", unit:"—", status:"found", statusText:"Приклад запису"}
 ];
 
 const input = document.getElementById("searchInput");
@@ -17,12 +17,12 @@ function render() {
   });
 
   if (!q) {
-    results.innerHTML = `<div class="empty">Введите данные для поиска. Реальная база данных будет подключена на следующем этапе.</div>`;
+    results.innerHTML = `<div class="empty">Введіть дані для пошуку. База даних оновлюється.</div>`;
     return;
   }
 
   if (!filtered.length) {
-    results.innerHTML = `<div class="empty">По вашему запросу записей в демонстрационной базе нет.</div>`;
+    results.innerHTML = `<div class="empty">По вашому запиту записів не знайдено. <a href="#request" style="color:#17202a; font-weight:700;">Залиште запит на пошук →</a></div>`;
     return;
   }
 
@@ -33,9 +33,9 @@ function render() {
         <span class="status">${escapeHtml(r.statusText)}</span>
       </div>
       <dl>
-        <dt>Населённый пункт</dt><dd>${escapeHtml(r.city)}</dd>
-        <dt>Подразделение</dt><dd>${escapeHtml(r.unit)}</dd>
-        <dt>Дата последней связи</dt><dd>${escapeHtml(r.date)}</dd>
+        <dt>Населений пункт</dt><dd>${escapeHtml(r.city)}</dd>
+        <dt>Підрозділ</dt><dd>${escapeHtml(r.unit)}</dd>
+        <dt>Дата останнього зв'язку</dt><dd>${escapeHtml(r.date)}</dd>
       </dl>
     </article>
   `).join("");
@@ -43,6 +43,32 @@ function render() {
 
 function escapeHtml(value) {
   return value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+}
+
+function sendToTelegram(e) {
+  e.preventDefault();
+  const name = document.getElementById("reqName").value.trim();
+  const city = document.getElementById("reqCity").value.trim();
+  const date = document.getElementById("reqDate").value.trim();
+  const contact = document.getElementById("reqContact").value.trim();
+  const info = document.getElementById("reqInfo").value.trim();
+
+  if (!name || !contact) {
+    alert("Будь ласка, заповніть обов'язкові поля: ФІО та контакт");
+    return false;
+  }
+
+  const text = encodeURIComponent(
+    `🔍 Запит на пошук\n\n` +
+    `👤 Кого шукаємо: ${name}\n` +
+    `📍 Місто/підрозділ: ${city || "—"}\n` +
+    `📅 Дата останнього зв'язку: ${date || "—"}\n` +
+    `📞 Контакт: ${contact}\n` +
+    `📝 Додатково: ${info || "—"}`
+  );
+
+  window.open(`https://t.me/Lutuiruslan?text=${text}`, "_blank");
+  return false;
 }
 
 button.addEventListener("click", render);

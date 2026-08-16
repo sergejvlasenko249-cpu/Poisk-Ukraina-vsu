@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Поиск Украина ВСУ — информационный сайт для поиска военнослужащих, пропавших без вести.">
+  <meta name="description" content="Поиск Украина ВСУ — помощь в поиске военнослужащих, пропавших без вести.">
   <title>Поиск Украина ВСУ</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,9 +15,10 @@
       <span>Поиск Украина ВСУ</span>
     </a>
     <nav>
-      <a href="#search">Поиск</a>
+      <a href="#search">Проверить базу</a>
+      <a href="#request">Оставить запрос</a>
       <a href="#info">Информация</a>
-      <a class="nav-telegram" href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Глубокий поиск</a>
+      <a class="nav-telegram" href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Telegram</a>
     </nav>
   </div>
 </header>
@@ -26,19 +27,19 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">Открытый информационный поиск</span>
+        <span class="eyebrow">Информационная помощь</span>
         <h1>Помощь в поиске пропавших без вести военнослужащих ВСУ</h1>
-        <p>Используйте обычный поиск на сайте, чтобы проверить доступную информацию. Если необходим более детальный поиск — обратитесь через Telegram.</p>
+        <p>На сайте можно проверить открытую базу данных. Если информации нет — оставьте запрос, и мы свяжемся с вами через Telegram.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#search">Начать поиск</a>
-          <a class="button secondary" href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Глубокий поиск → Telegram</a>
+          <a class="button primary" href="#search">Проверить базу</a>
+          <a class="button secondary" href="#request">Оставить запрос</a>
         </div>
       </div>
       <div class="hero-card">
-        <div class="hero-card-icon">🔍</div>
-        <h2>Обычный поиск</h2>
-        <p>Доступен каждому посетителю сайта без регистрации.</p>
-        <a href="#search">Перейти к поиску →</a>
+        <div class="hero-card-icon">📋</div>
+        <h2>Как это работает</h2>
+        <p>1. Проверьте базу на сайте<br>2. Если нет данных — заполните форму<br>3. Получите ответ в Telegram</p>
+        <a href="https://t.me/Lutuiruslan" target="_blank" rel="noopener">Написать в Telegram →</a>
       </div>
     </div>
   </section>
@@ -46,9 +47,9 @@
   <section id="search" class="section">
     <div class="container">
       <div class="section-heading">
-        <span class="eyebrow">Поиск</span>
-        <h2>Найти военнослужащего</h2>
-        <p>Введите ФИО, населённый пункт или другую известную информацию.</p>
+        <span class="eyebrow">Проверка</span>
+        <h2>Проверить открытую базу</h2>
+        <p>Введите ФИО, населённый пункт или подразделение. База обновляется по мере поступления данных.</p>
       </div>
 
       <div class="search-box">
@@ -65,20 +66,59 @@
       </div>
 
       <div id="results" class="results" aria-live="polite"></div>
+
+      <div class="notice-box" style="margin-top:20px; padding:18px; background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; color:#92400e;">
+        <strong>⚠️ Не нашли человека?</strong> Открытая база содержит только подтверждённые данные. Если поиск не дал результатов — <a href="#request" style="color:#92400e; text-decoration:underline; font-weight:700;">оставьте запрос</a>, и мы проведём глубокий поиск.
+      </div>
     </div>
   </section>
 
-  <section id="info" class="section section-muted">
+  <section id="request" class="section section-muted">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Запрос</span>
+        <h2>Оставить запрос на поиск</h2>
+        <p>Заполните форму — мы получим ваш запрос в Telegram и свяжемся с вами.</p>
+      </div>
+
+      <form class="search-box" id="requestForm" onsubmit="return sendToTelegram(event)">
+        <div class="form-group">
+          <label for="reqName">Кого ищем (ФИО)</label>
+          <input id="reqName" type="text" placeholder="Іваненко Олег Петрович" required>
+        </div>
+        <div class="form-group">
+          <label for="reqCity">Населённый пункт / подразделение</label>
+          <input id="reqCity" type="text" placeholder="Харків, 93 ОМБр">
+        </div>
+        <div class="form-group">
+          <label for="reqDate">Дата последней связи (примерно)</label>
+          <input id="reqDate" type="text" placeholder="15.02.2024">
+        </div>
+        <div class="form-group">
+          <label for="reqContact">Ваш контакт (Telegram или телефон)</label>
+          <input id="reqContact" type="text" placeholder="@username или +380..." required>
+        </div>
+        <div class="form-group">
+          <label for="reqInfo">Дополнительная информация</label>
+          <textarea id="reqInfo" rows="3" placeholder="Всё, что может помочь в поиске..."></textarea>
+        </div>
+        <button type="submit" class="button primary" style="width:100%; min-height:52px; font-size:16px;">📨 Отправить запрос в Telegram</button>
+        <p style="text-align:center; color:#66717c; font-size:13px; margin-top:10px;">После нажатия откроется Telegram с готовым сообщением</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="info" class="section">
     <div class="container info-grid">
       <div>
         <span class="eyebrow">Важно</span>
         <h2>Информация для родственников</h2>
-        <p>Сайт предназначен для поиска и систематизации открытой информации. Наличие записи на сайте само по себе не подтверждает официальный статус человека.</p>
+        <p>Сайт предназначен для помощи в поиске. Мы не публикуем персональные данные в открытом доступе — все запросы обрабатываются лично через Telegram.</p>
       </div>
       <div class="info-list">
-        <div><strong>Проверяйте источники</strong><span>Отделяйте подтверждённые сведения от сообщений пользователей.</span></div>
-        <div><strong>Берегите персональные данные</strong><span>Не публикуйте пароли, банковские данные и другую лишнюю конфиденциальную информацию.</span></div>
-        <div><strong>Нужен детальный поиск?</strong><span>Нажмите «Глубокий поиск» и перейдите в Telegram.</span></div>
+        <div><strong>Проверяйте источники</strong><span>Отделяйте подтверждённые сведения от непроверенных сообщений.</span></div>
+        <div><strong>Берегите данные</strong><span>Не публикуйте конфиденциальную информацию в открытых источниках.</span></div>
+        <div><strong>Нужна помощь?</strong><span>Напишите нам в Telegram — мы ответим в ближайшее время.</span></div>
       </div>
     </div>
   </section>

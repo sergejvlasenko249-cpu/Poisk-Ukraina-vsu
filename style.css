@@ -30,8 +30,10 @@ h2{font-size:clamp(28px,3vw,40px);line-height:1.15;margin:8px 0 15px}
 .search-box{background:#fff;border:1px solid #dfe3e7;border-radius:18px;padding:24px;box-shadow:0 12px 30px rgba(25,35,45,.05)}
 .search-box label{display:block;font-weight:800;margin-bottom:8px}
 .search-row{display:flex;gap:10px}
-input{width:100%;height:50px;border:1px solid #cbd1d7;border-radius:10px;padding:0 15px;font-size:16px;outline:none}
-input:focus{border-color:#59636e;box-shadow:0 0 0 3px rgba(89,99,110,.12)}
+input,textarea{width:100%;border:1px solid #cbd1d7;border-radius:10px;padding:12px 15px;font-size:16px;outline:none;font-family:inherit}
+input{height:50px}
+textarea{resize:vertical;min-height:80px}
+input:focus,textarea:focus{border-color:#59636e;box-shadow:0 0 0 3px rgba(89,99,110,.12)}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .filter{border:1px solid #d5dae0;background:#fff;border-radius:999px;padding:8px 13px;cursor:pointer}
 .filter.active{background:#17202a;color:#fff;border-color:#17202a}
@@ -44,11 +46,14 @@ input:focus{border-color:#59636e;box-shadow:0 0 0 3px rgba(89,99,110,.12)}
 .result-card dt{font-weight:700;color:#66717c}
 .result-card dd{margin:0}
 .empty{padding:30px;border:1px dashed #cbd1d7;border-radius:16px;text-align:center;color:#66717c;background:#fff}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-weight:800;margin-bottom:6px}
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px}
 .info-list{display:grid;gap:14px}
 .info-list div{background:#fff;border:1px solid #e0e4e8;border-radius:14px;padding:18px}
 .info-list strong,.info-list span{display:block}
 .info-list span{color:#66717c;margin-top:4px}
+.notice-box a{color:#92400e}
 footer{border-top:1px solid #e5e7eb;padding:28px 0}
 .footer-inner{display:flex;justify-content:space-between;gap:20px;color:#66717c}
 .footer-inner a{font-weight:700}
